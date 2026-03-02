@@ -5,14 +5,14 @@ Objectif :
 - Installation
 - Installer la doc et Read the Doc
 - Pour lire le markdown
-- Compiler la documentation
+- Compiler la documentation  
 **Configuration**
 - Changer le thème
-- Définir les chemins pour trouver notre code
+- Définir les chemins pour trouver notre code  
 **index.rst**
 - Inclure le Readme.md (myst_parser)
 - Créer l’auto doc
-- Arborescence plus complète
+- Arborescence plus complète  
 **Workflow et GitHub Pages**
 - GitHub Pages
 - Workflow
