@@ -24,7 +24,7 @@ Objectif :
 ---
 
 ## Objectif :
-L’objectif de ce tutoriel est de transformer votre code source en une documentation vivante, structurée et esthétique, capable de survivre à votre départ du projet. En utilisant **Sphinx** avec le thème moderne **Furo** (ou le standard **Read the Docs**), vous apprendrez à générer automatiquement une documentation technique à partir de vos docstrings, tout en intégrant des guides utilisateurs en Markdown ou reStructuredText. Nous mettrons l’accent sur la création d'un "contrat de maintenance" clair : chaque module (`app_data`, `app_ia`) doit être capable d'expliquer ses propres schémas de données et ses choix de modèles, garantissant ainsi que votre architecture distribuée reste compréhensible et évolutive pour tout futur collaborateur.
+L’objectif de ce tutoriel est de transformer votre code source en une documentation vivante, structurée et esthétique, capable de survivre à votre départ du projet.  En utilisant **Sphinx** avec le thème moderne **Furo** (ou le standard **Read the Docs**), vous apprendrez à générer automatiquement une documentation technique à partir de vos docstrings, tout en intégrant des guides utilisateurs en Markdown ou reStructuredText. Nous mettrons l’accent sur la création d'un "contrat de maintenance" clair : chaque module (`app_data`, `app_ia`) doit être capable d'expliquer ses propres schémas de données et ses choix de modèles, garantissant ainsi que votre architecture distribuée reste compréhensible et évolutive pour tout futur collaborateur.
 
 ## Installation + principale commande
 ### Installation 
