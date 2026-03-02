@@ -99,7 +99,7 @@ Le fichier `index.rst` est la **page d'accueil** qui définit la structure de to
 Son rôle principal est de contenir la directive `.. toctree::` (Table of Contents Tree). C'est ce bloc qui indique à Sphinx :
 1. Quels fichiers inclure dans la documentation.
 2. Dans quel ordre les afficher.
-3. Comment construire le menu de navigation latéral.
+3. Comment construire le menu de navigation latéral.  
 **En résumé :** Si un fichier .rst ou .md n'est pas listé dans index.rst, il n'apparaîtra jamais dans ton site final, même s'il existe dans ton dossier.
 
 ### Inclure le `Readme.md` (myst_parser)
