@@ -22,6 +22,6 @@ Documentation de SQLalchemy Exo
    :caption: Table des matières:
 
    self
-   modules_api
+   mon_api
    bibliographie
 
