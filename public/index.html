@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Recherche" href="search.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Recherche" href="search.html"><link rel="next" title="Référence technique de l’API" href="modules_api.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Documentation - Sphinx - UV - Exo SQLalchemy</title>
@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -189,7 +189,13 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  
+  <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Documentation de SQLalchemy Exo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_api.html">Référence technique de l’API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Sources et Références</a></li>
+</ul>
+
 </div>
 </div>
 
@@ -221,17 +227,383 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="sqlalchemy-exo-documentation">
-<h1>SQLalchemy_exo documentation<a class="headerlink" href="#sqlalchemy-exo-documentation" title="Lien vers cette rubrique">¶</a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
+          <p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
 documentation for details.</p>
+<section id="documentation-de-sqlalchemy-exo">
+<h1>Documentation de SQLalchemy Exo<a class="headerlink" href="#documentation-de-sqlalchemy-exo" title="Lien vers cette rubrique">¶</a></h1>
+<section id="docs-sphinx">
+<h2>Docs - SPHINX<a class="headerlink" href="#docs-sphinx" title="Lien vers cette rubrique">¶</a></h2>
+<p>Objectif :</p>
+<p><strong>Installation + principale commande</strong></p>
+<ul class="simple">
+<li><p>Installation</p></li>
+<li><p>Installer la doc et Read the Doc</p></li>
+<li><p>Pour lire le markdown</p></li>
+<li><p>Compiler la documentation</p></li>
+</ul>
+<p><strong>Configuration</strong></p>
+<ul class="simple">
+<li><p>Changer le thème</p></li>
+<li><p>Définir les chemins pour trouver notre code</p></li>
+</ul>
+<p><strong>index.rst</strong></p>
+<ul class="simple">
+<li><p>Inclure le Readme.md (myst_parser)</p></li>
+<li><p>Créer l’auto doc</p></li>
+<li><p>Arborescence plus complète</p></li>
+</ul>
+<p><strong>Workflow et GitHub Pages</strong></p>
+<ul class="simple">
+<li><p>GitHub Pages</p></li>
+<li><p>Workflow</p></li>
+</ul>
+<hr class="docutils" />
+<section id="objectif">
+<h3>Objectif :<a class="headerlink" href="#objectif" title="Lien vers cette rubrique">¶</a></h3>
+<p>L’objectif de ce tutoriel est de transformer votre code source en une documentation vivante, structurée et esthétique, capable de survivre à votre départ du projet.  En utilisant <strong>Sphinx</strong> avec le thème moderne <strong>Furo</strong> (ou le standard <strong>Read the Docs</strong>), vous apprendrez à générer automatiquement une documentation technique à partir de vos docstrings, tout en intégrant des guides utilisateurs en Markdown ou reStructuredText. Nous mettrons l’accent sur la création d’un « contrat de maintenance » clair : chaque module (<code class="docutils literal notranslate"><span class="pre">app_data</span></code>, <code class="docutils literal notranslate"><span class="pre">app_ia</span></code>) doit être capable d’expliquer ses propres schémas de données et ses choix de modèles, garantissant ainsi que votre architecture distribuée reste compréhensible et évolutive pour tout futur collaborateur.</p>
+</section>
+<section id="installation-principale-commande">
+<h3>Installation + principale commande<a class="headerlink" href="#installation-principale-commande" title="Lien vers cette rubrique">¶</a></h3>
+<section id="installation">
+<h4>Installation<a class="headerlink" href="#installation" title="Lien vers cette rubrique">¶</a></h4>
+<p>Installer la doc et Read the Doc</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span><span class="s2">&quot;sphinx-rtd-theme&gt;=3.0.0rc1&quot;</span>
+</pre></div>
+</div>
+<p>Pour lire le markdown</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>myst_parser
+</pre></div>
+</div>
+<p>Créer un dossier docs et aller dedans:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>sphinx-quickstart
+</pre></div>
+</div>
+<p>Compiler la documentation (lancer depuis la racine):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>docs/source<span class="w"> </span>public
+</pre></div>
+</div>
+</section>
+</section>
+<section id="configuration-conf-py">
+<h3>Configuration (conf.py)<a class="headerlink" href="#configuration-conf-py" title="Lien vers cette rubrique">¶</a></h3>
+<p>Dans le dossier <code class="docutils literal notranslate"><span class="pre">docs</span></code>&gt;<code class="docutils literal notranslate"><span class="pre">source</span></code>&gt;<code class="docutils literal notranslate"><span class="pre">conf.py</span></code> on peut gérer la configuration</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sphinx_rtd_theme</span>
+
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>  <span class="c1"># Pour extraire la doc du code</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span> <span class="c1"># Pour supporter les docstrings style Google/NumPy</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>  <span class="c1"># Pour latex</span>
+    <span class="s2">&quot;sphinx.ext.viewcode&quot;</span><span class="p">,</span> <span class="c1"># pour afficher code source</span>
+    <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>         <span class="c1"># pour le markdown</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<section id="changer-le-theme">
+<h4>Changer le thème<a class="headerlink" href="#changer-le-theme" title="Lien vers cette rubrique">¶</a></h4>
+<p>On change</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;alabaster&#39;</span>
+</pre></div>
+</div>
+<p>par</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_rtd_theme&quot;</span>
+</pre></div>
+</div>
+<p>On peut aussi ajouter un logo, il faut créer manuellement le dossier docs/source/_static:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_logo</span> <span class="o">=</span> <span class="s2">&quot;_static/img/logo.png&quot;</span>
+</pre></div>
+</div>
+<p>Changer le texte de l’onglet de la page</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_title</span> <span class="o">=</span> <span class="s2">&quot;Documentation - Sphinx - UV&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="definir-les-chemins-pour-trouver-notre-code">
+<h4>Définir les chemins pour trouver notre code<a class="headerlink" href="#definir-les-chemins-pour-trouver-notre-code" title="Lien vers cette rubrique">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+
+<span class="c1"># On remonte à la racine, puis on descend dans &#39;app&#39;</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../app&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Au choix, tout dépend si le projet est directement à la racine ou si le projet est rangé dans un dossier de projet (ici app).</p>
+</div></blockquote>
+</section>
+</section>
+<section id="autodoc-index-rst">
+<h3>Autodoc (index.rst)<a class="headerlink" href="#autodoc-index-rst" title="Lien vers cette rubrique">¶</a></h3>
+<p>Le fichier <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> est la <strong>page d’accueil</strong> qui définit la structure de ton site.<br />
+Son rôle principal est de contenir la directive <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">toctree::</span></code> (Table of Contents Tree). C’est ce bloc qui indique à Sphinx :</p>
+<ol class="arabic simple">
+<li><p>Quels fichiers inclure dans la documentation.</p></li>
+<li><p>Dans quel ordre les afficher.</p></li>
+<li><p>Comment construire le menu de navigation latéral.</p></li>
+</ol>
+<p><strong>En résumé :</strong> Si un fichier .rst ou .md n’est pas listé dans index.rst, il n’apparaîtra jamais dans ton site final, même s’il existe dans ton dossier.</p>
+<section id="inclure-le-readme-md-myst-parser">
+<h4>Inclure le <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> (myst_parser)<a class="headerlink" href="#inclure-le-readme-md-myst-parser" title="Lien vers cette rubrique">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">include</span><span class="p">::</span> <span class="o">../../</span><span class="n">README</span><span class="o">.</span><span class="n">md</span>
+   <span class="p">:</span><span class="n">parser</span><span class="p">:</span> <span class="n">myst_parser</span><span class="o">.</span><span class="n">sphinx_</span>
+</pre></div>
+</div>
+</section>
+<section id="creer-lauto-doc">
+<h4>Créer l’auto doc:<a class="headerlink" href="#creer-lauto-doc" title="Lien vers cette rubrique">¶</a></h4>
+<p>Si vous avez votre <strong>api</strong> dans un dossier mon_api, je vous conseille de créer un fichier <code class="docutils literal notranslate"><span class="pre">mon_api.rst</span></code> (pour rester consistant) dans le même dossier que <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>.
+Puis de l’appeler depuis <code class="docutils literal notranslate"><span class="pre">mon_api.rst</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="p">:</span><span class="n">caption</span><span class="p">:</span> <span class="n">Contents</span><span class="p">:</span>
+
+   <span class="bp">self</span>
+   <span class="n">mon_api</span>
+</pre></div>
+</div>
+<p>Attention, retour à la ligne obligatoire entre caption et self</p>
+<p>et mon_api.rst sera du genre:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Documentation</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;api</span>
+<span class="o">======================</span>
+
+<span class="n">Mon</span> <span class="n">application</span>
+<span class="o">---------------</span>
+
+<span class="o">..</span> <span class="n">automodule</span><span class="p">::</span> <span class="n">mon_api</span><span class="o">.</span><span class="n">api</span>
+   <span class="p">:</span><span class="n">members</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">undoc</span><span class="o">-</span><span class="n">members</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">show</span><span class="o">-</span><span class="n">inheritance</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Dans cette exemple votre api : <code class="docutils literal notranslate"><span class="pre">apy.py</span></code> se trouve dans le dossier <code class="docutils literal notranslate"><span class="pre">mon_api</span></code></p>
+</section>
+<section id="arborescence-plus-complete">
+<h4>Arborescence plus complète<a class="headerlink" href="#arborescence-plus-complete" title="Lien vers cette rubrique">¶</a></h4>
+<p>Imaginons qu’on ait plusieurs fichiers dans un dossier de l’application, le dossier module qui contiendrait deux fichiers:</p>
+<ul class="simple">
+<li><p>modules/modules.py</p></li>
+<li><p>modules/my_maths.py</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>racine/
+├──<span class="w"> </span>mon_api/
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py<span class="w">        </span><span class="c1"># Indique que mon_api est un package</span>
+│<span class="w">   </span>├──<span class="w"> </span>app.py<span class="w">             </span><span class="c1"># Ton fichier principal</span>
+│<span class="w">   </span>└──<span class="w"> </span>modules/
+│<span class="w">       </span>├──<span class="w"> </span>__init__.py<span class="w">    </span><span class="c1"># Indique que modules est un sous-package</span>
+│<span class="w">       </span>├──<span class="w"> </span>my_maths.py
+│<span class="w">       </span>└──<span class="w"> </span>modules.py
+├──<span class="w"> </span>docs/
+│<span class="w">   </span>└──<span class="w"> </span>source/
+│<span class="w">       </span>├──<span class="w"> </span>conf.py<span class="w">        </span><span class="c1"># sys.path.insert(0, os.path.abspath(&#39;../../&#39;))</span>
+│<span class="w">       </span>├──<span class="w"> </span>mon_api.rst<span class="w">        </span>
+│<span class="w">       </span>└──<span class="w"> </span>index.rst
+└──<span class="w"> </span>pyproject.toml
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">Modules</span>
+<span class="o">===================</span>
+
+Outils<span class="w"> </span>Mathématiques
+--------------------
+
+..<span class="w"> </span>automodule::<span class="w"> </span>api.modules.my_maths
+<span class="w">   </span>:members:
+<span class="w">   </span>:undoc-members:
+<span class="w">   </span>:show-inheritance:
+
+Logique<span class="w"> </span>métier
+--------------
+
+..<span class="w"> </span>automodule::<span class="w"> </span>api.modules.modules
+<span class="w">   </span>:members:
+<span class="w">   </span>:undoc-members:
+<span class="w">   </span>:show-inheritance:
+
+..<span class="w"> </span>_references:
+
+Bibliographie
+-------------
+
+..<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Schutz,<span class="w"> </span>A.<span class="w"> </span><span class="o">(</span><span class="m">2026</span><span class="o">)</span>.<span class="w"> </span>*Manuel<span class="w"> </span>de<span class="w"> </span>Packaging<span class="w"> </span>pour<span class="w"> </span>l<span class="err">&#39;</span>IA*.
+</pre></div>
+</div>
+<p>La citation peut être appelé dans le documentation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculer_moyenne</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcule la moyenne arithmétique d&#39;une liste de nombres.</span>
+<span class="sd">    La formule mathématique est la suivante :</span>
+
+<span class="sd">    .. math::</span>
+<span class="sd">       \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i</span>
+
+<span class="sd">    Comme indiqué dans la littérature [1]_, la moyenne est sensible</span>
+<span class="sd">    aux valeurs aberrantes.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (list): Une liste ou un array de nombres.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: La moyenne calculée.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="workflow-et-github-pages">
+<h3>Workflow et GitHub Pages<a class="headerlink" href="#workflow-et-github-pages" title="Lien vers cette rubrique">¶</a></h3>
+<section id="github-pages">
+<h4>GitHub Pages:<a class="headerlink" href="#github-pages" title="Lien vers cette rubrique">¶</a></h4>
+<p>Sur GitHub, allez dans les setting de votre projet et choisissez <code class="docutils literal notranslate"><span class="pre">Pages</span></code>, réglez le <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">and</span> <span class="pre">deployment</span></code> sur <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Actions</span></code></p>
+</section>
+<section id="workflow">
+<h4>Workflow<a class="headerlink" href="#workflow" title="Lien vers cette rubrique">¶</a></h4>
+<p>Mettre dans le fichier <code class="docutils literal notranslate"><span class="pre">.github/workflows/docs.yml</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Documentation</span>
+
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Se lance à chaque fois que tu push sur main</span>
+
+
+<span class="nt">permissions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<span class="w">  </span><span class="nt">pages</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<span class="w">  </span><span class="nt">id-token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build-docs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout code</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install uv</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">astral-sh/setup-uv@v3</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;latest&quot;</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uv sync --all-extras</span><span class="w"> </span><span class="c1"># Installe Sphinx et le thème RTD définis dans le fichier toml</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build Sphinx Documentation</span>
+<span class="w">        </span><span class="c1"># On génère le HTML dans le dossier &quot;public&quot;</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uv run sphinx-build docs/source public</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload artifact</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-pages-artifact@v3</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;public&#39;</span>
+
+<span class="w">  </span><span class="nt">deploy-docs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build-docs</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-pages</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ steps.deployment.outputs.page_url }}</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy to GitHub Pages</span>
+<span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/deploy-pages@v4</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="encore-plus-joli">
+<h3>Encore plus joli<a class="headerlink" href="#encore-plus-joli" title="Lien vers cette rubrique">¶</a></h3>
+<section id="les-commentaires">
+<h4>Les commentaires<a class="headerlink" href="#les-commentaires" title="Lien vers cette rubrique">¶</a></h4>
+<p>On peut améliorer le visuel des commentaires en utilisant des lignes commençant par &gt;&gt;&gt;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Description de dossier.mon_module.py</span>
+<span class="sd">:cite:p:`vaswani2023attentionneed`</span>
+<span class="sd">&gt;&gt;&gt; exemple d&#39;utilisation</span>
+<span class="sd">&gt;&gt;&gt; uv add mon_module</span>
+<span class="sd">&gt;&gt;&gt; from mon_module import exe_app</span>
+<span class="sd">&gt;&gt;&gt; exe_app()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="bibliographie-type-bibtex">
+<h4>Bibliographie type BibTex<a class="headerlink" href="#bibliographie-type-bibtex" title="Lien vers cette rubrique">¶</a></h4>
+<p>Le <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code> est un format de fichier standard (<strong>.bib</strong>) permettant de stocker des références bibliographiques de manière structurée et réutilisable. Il est massivement utilisé par <strong>les chercheurs, les universitaires et les ingénieurs</strong> (notamment en IA et Data Science) pour automatiser la citation de sources dans des documents LaTeX ou Sphinx.</p>
+<section id="installation-de-lextension-et-configuration-de-conf-py">
+<h5>Installation de l’extension et configuration de conf.py<a class="headerlink" href="#installation-de-lextension-et-configuration-de-conf-py" title="Lien vers cette rubrique">¶</a></h5>
+<p>On installe le package : uv add sphinxcontrib-bibtex
+Configuration dans <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>  <span class="c1"># Pour extraire la doc du code</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span> <span class="c1"># Pour supporter les docstrings style Google/NumPy</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>  <span class="c1"># Pour latex</span>
+    <span class="s2">&quot;sphinx.ext.viewcode&quot;</span><span class="p">,</span> <span class="c1"># pour afficher code source</span>
+    <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>         <span class="c1"># pour le markdown</span>
+    <span class="s1">&#39;sphinxcontrib.bibtex&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">bibtex_bibfiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;refs.bib&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Le fichier <code class="docutils literal notranslate"><span class="pre">refs.bib</span></code> se trouve dans le dossier <code class="docutils literal notranslate"><span class="pre">source</span></code> et contient toutes les citations</p>
+</section>
+<section id="exemple-de-citation-bibtex-attention-is-all-you-need">
+<h5>Exemple de citation bibtex (Attention is All You Need)<a class="headerlink" href="#exemple-de-citation-bibtex-attention-is-all-you-need" title="Lien vers cette rubrique">¶</a></h5>
+<p>Provenant de https://arxiv.org/abs/1706.03762 en cliquant sur <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">BibTeX</span> <span class="pre">citation</span></code></p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@misc</span><span class="p">{</span><span class="nl">vaswani2023attentionneed</span><span class="p">,</span>
+<span class="w">      </span><span class="na">title</span><span class="p">=</span><span class="s">{Attention Is All You Need}</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="na">author</span><span class="p">=</span><span class="s">{Ashish Vaswani and Noam Shazeer and Niki Parmar and Jakob Uszkoreit and Llion Jones and Aidan N. Gomez and Lukasz Kaiser and Illia Polosukhin}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">eprint</span><span class="p">=</span><span class="s">{1706.03762}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">archivePrefix</span><span class="p">=</span><span class="s">{arXiv}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">primaryClass</span><span class="p">=</span><span class="s">{cs.CL}</span><span class="p">,</span>
+<span class="w">      </span><span class="na">url</span><span class="p">=</span><span class="s">{https://arxiv.org/abs/1706.03762}</span><span class="p">,</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="afficher-toutes-les-references">
+<h5>Afficher toutes les références<a class="headerlink" href="#afficher-toutes-les-references" title="Lien vers cette rubrique">¶</a></h5>
+<p>Vous pouvez très bien créer un <code class="docutils literal notranslate"><span class="pre">biblio.rst</span></code> et mettre cela dedans</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Bibliographie
+-------------
+
+..<span class="w"> </span>bibliography::
+<span class="w">   </span>:filter:<span class="w"> </span>cited
+</pre></div>
+</div>
+</section>
+<section id="citer-une-reference-dans-la-docstring-dun-de-vos-code">
+<h5>Citer une référence dans la docstring d’un de vos code<a class="headerlink" href="#citer-une-reference-dans-la-docstring-dun-de-vos-code" title="Lien vers cette rubrique">¶</a></h5>
+<p>On utilise :cite:p:<code class="docutils literal notranslate"><span class="pre">nom_de_le_référence</span></code> pour afficher (avec lien) la référence.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Description de dossier.mon_module.py</span>
+<span class="sd">Comme indiqué dans la littérature :cite:p:`vaswani2023attentionneed`</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation de SQLalchemy Exo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_api.html">Référence technique de l’API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules_api.html#gestion-des-donnees">Gestion des données</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Sources et Références</a></li>
+</ul>
 </div>
 </section>
 
@@ -240,7 +612,15 @@ documentation for details.</p>
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="modules_api.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Référence technique de l’API</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           
         </div>
         <div class="bottom-of-page">
@@ -260,8 +640,61 @@ documentation for details.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Documentation de SQLalchemy Exo</a><ul>
+<li><a class="reference internal" href="#docs-sphinx">Docs - SPHINX</a><ul>
+<li><a class="reference internal" href="#objectif">Objectif :</a></li>
+<li><a class="reference internal" href="#installation-principale-commande">Installation + principale commande</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration-conf-py">Configuration (conf.py)</a><ul>
+<li><a class="reference internal" href="#changer-le-theme">Changer le thème</a></li>
+<li><a class="reference internal" href="#definir-les-chemins-pour-trouver-notre-code">Définir les chemins pour trouver notre code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#autodoc-index-rst">Autodoc (index.rst)</a><ul>
+<li><a class="reference internal" href="#inclure-le-readme-md-myst-parser">Inclure le <code class="docutils literal notranslate"><span class="pre">Readme.md</span></code> (myst_parser)</a></li>
+<li><a class="reference internal" href="#creer-lauto-doc">Créer l’auto doc:</a></li>
+<li><a class="reference internal" href="#arborescence-plus-complete">Arborescence plus complète</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#workflow-et-github-pages">Workflow et GitHub Pages</a><ul>
+<li><a class="reference internal" href="#github-pages">GitHub Pages:</a></li>
+<li><a class="reference internal" href="#workflow">Workflow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#encore-plus-joli">Encore plus joli</a><ul>
+<li><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
+<li><a class="reference internal" href="#bibliographie-type-bibtex">Bibliographie type BibTex</a><ul>
+<li><a class="reference internal" href="#installation-de-lextension-et-configuration-de-conf-py">Installation de l’extension et configuration de conf.py</a></li>
+<li><a class="reference internal" href="#exemple-de-citation-bibtex-attention-is-all-you-need">Exemple de citation bibtex (Attention is All You Need)</a></li>
+<li><a class="reference internal" href="#afficher-toutes-les-references">Afficher toutes les références</a></li>
+<li><a class="reference internal" href="#citer-une-reference-dans-la-docstring-dun-de-vos-code">Citer une référence dans la docstring d’un de vos code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
