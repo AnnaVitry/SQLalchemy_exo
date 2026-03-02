@@ -2,11 +2,13 @@
 <html class="no-js" lang="fr" data-content_root="./">
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#"><link rel="search" title="Recherche" href="search.html">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Recherche" href="search.html"><link rel="next" title="Sources et Références" href="bibliographie.html"><link rel="prev" title="Documentation de SQLalchemy Exo" href="index.html">
         <link rel="prefetch" href="_static/favicon.svg" as="image">
 
-    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 --><title>Index - Documentation - Sphinx - UV - Exo SQLalchemy</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Référence technique de l’API - Documentation - Sphinx - UV - Exo SQLalchemy</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     
@@ -171,7 +173,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -192,10 +194,10 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Documentation de SQLalchemy Exo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mon_api.html">Référence technique de l’API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mon_api.html#modules">Modules</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Référence technique de l’API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#modules">Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Sources et Références</a></li>
 </ul>
 
@@ -216,7 +218,13 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/mon_api.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
@@ -224,76 +232,86 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
-<section class="genindex-section">
-  <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"><a href="#C"><strong>C</strong></a> | <a href="#M"><strong>M</strong></a></div>
+          <section id="reference-technique-de-l-api">
+<h1>Référence technique de l’API<a class="headerlink" href="#reference-technique-de-l-api" title="Lien vers cette rubrique">¶</a></h1>
+<p>Ce module contient la logique liée à SQLalchemy et aux modèles de données.</p>
+<section id="gestion-des-donnees">
+<h2>Gestion des données<a class="headerlink" href="#gestion-des-donnees" title="Lien vers cette rubrique">¶</a></h2>
 </section>
-<section id="C" class="genindex-section">
-  <h2>C</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-    <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="mon_api.html#mon_api.modules.my_maths.calculer_moyenne">calculer_moyenne() (dans le module mon_api.modules.my_maths)</a>
-</li>
-    </ul></td>
-  </tr></table>
 </section>
+<section id="modules">
+<span id="module-mon_api.app"></span><h1>Modules<a class="headerlink" href="#modules" title="Lien vers cette rubrique">¶</a></h1>
+<section id="module-mon_api.modules.my_maths">
+<span id="outils-mathematiques"></span><h2>Outils Mathématiques<a class="headerlink" href="#module-mon_api.modules.my_maths" title="Lien vers cette rubrique">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mon_api.modules.my_maths.calculer_moyenne">
+<span class="sig-prename descclassname"><span class="pre">mon_api.modules.my_maths.</span></span><span class="sig-name descname"><span class="pre">calculer_moyenne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/mon_api/modules/my_maths.html#calculer_moyenne"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mon_api.modules.my_maths.calculer_moyenne" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Calcule la moyenne arithmétique d’une liste de nombres.
+La formule mathématique est la suivante :</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\]</div>
+</div>
+<p>Comme indiqué dans la littérature <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, la moyenne est sensible
+aux valeurs aberrantes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>list</em>) – Une liste ou un array de nombres.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>La moyenne calculée.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
 
-<section id="M" class="genindex-section">
-  <h2>M</h2>
-  <table style="width: 100%" class="indextable genindextable"><tr>
-    <td style="width: 33%; vertical-align: top;"><ul>
-        <li>
-    module
-
-        <ul>
-          <li><a href="mon_api.html#module-mon_api.app">mon_api.app</a>
-</li>
-          <li><a href="mon_api.html#module-mon_api.modules.modules">mon_api.modules.modules</a>
-</li>
-          <li><a href="mon_api.html#module-mon_api.modules.my_maths">mon_api.modules.my_maths</a>
-</li>
-        </ul></li>
-        <li>
-    mon_api.app
-
-        <ul>
-          <li><a href="mon_api.html#module-mon_api.app">module</a>
-</li>
-        </ul></li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
-        <li>
-    mon_api.modules.modules
-
-        <ul>
-          <li><a href="mon_api.html#module-mon_api.modules.modules">module</a>
-</li>
-        </ul></li>
-        <li>
-    mon_api.modules.my_maths
-
-        <ul>
-          <li><a href="mon_api.html#module-mon_api.modules.my_maths">module</a>
-</li>
-        </ul></li>
-    </ul></td>
-  </tr></table>
 </section>
-
+<section id="module-mon_api.modules.modules">
+<span id="logique-metier"></span><h2>Logique métier<a class="headerlink" href="#module-mon_api.modules.modules" title="Lien vers cette rubrique">¶</a></h2>
+</section>
+<section id="bibliographie">
+<span id="references"></span><h2>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien vers cette rubrique">¶</a></h2>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Schutz, A. (2026). <em>Manuel de Packaging pour l’IA</em>.</p>
+</aside>
+</aside>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="bibliographie.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Sources et Références</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -312,8 +330,36 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Référence technique de l’API</a><ul>
+<li><a class="reference internal" href="#gestion-des-donnees">Gestion des données</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modules">Modules</a><ul>
+<li><a class="reference internal" href="#module-mon_api.modules.my_maths">Outils Mathématiques</a><ul>
+<li><a class="reference internal" href="#mon_api.modules.my_maths.calculer_moyenne"><code class="docutils literal notranslate"><span class="pre">calculer_moyenne()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-mon_api.modules.modules">Logique métier</a></li>
+<li><a class="reference internal" href="#bibliographie">Bibliographie</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -323,5 +369,6 @@
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="_static/translations.js?v=e6b791cb"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     </body>
 </html>

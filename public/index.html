@@ -3,7 +3,8 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Recherche" href="search.html"><link rel="next" title="Référence technique de l’API" href="modules_api.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Recherche" href="search.html"><link rel="next" title="Référence technique de l’API" href="mon_api.html">
+        <link rel="prefetch" href="_static/favicon.svg" as="image">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Documentation - Sphinx - UV - Exo SQLalchemy</title>
@@ -181,6 +182,9 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/favicon.svg" alt="Logo"/>
+  </div>
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -192,7 +196,8 @@
   <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Documentation de SQLalchemy Exo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_api.html">Référence technique de l’API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mon_api.html">Référence technique de l’API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mon_api.html#modules">Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Sources et Références</a></li>
 </ul>
 
@@ -232,7 +237,7 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
+          <p>Add your content using <cite>reStructuredText</cite> syntax. See the
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
 documentation for details.</p>
 <section id="documentation-de-sqlalchemy-exo">
@@ -362,26 +367,26 @@ Son rôle principal est de contenir la directive <code class="docutils literal n
 <h4>Créer l’auto doc:<a class="headerlink" href="#creer-lauto-doc" title="Lien vers cette rubrique">¶</a></h4>
 <p>Si vous avez votre <strong>api</strong> dans un dossier mon_api, je vous conseille de créer un fichier <code class="docutils literal notranslate"><span class="pre">mon_api.rst</span></code> (pour rester consistant) dans le même dossier que <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>.
 Puis de l’appeler depuis <code class="docutils literal notranslate"><span class="pre">mon_api.rst</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
-   <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
-   <span class="p">:</span><span class="n">caption</span><span class="p">:</span> <span class="n">Contents</span><span class="p">:</span>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Contents:
 
-   <span class="bp">self</span>
-   <span class="n">mon_api</span>
+   self
+   mon_api
 </pre></div>
 </div>
 <p>Attention, retour à la ligne obligatoire entre caption et self</p>
 <p>et mon_api.rst sera du genre:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Documentation</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;api</span>
-<span class="o">======================</span>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Documentation de l&#39;api</span>
+<span class="gh">======================</span>
 
-<span class="n">Mon</span> <span class="n">application</span>
-<span class="o">---------------</span>
+<span class="gh">Mon application</span>
+<span class="gh">---------------</span>
 
-<span class="o">..</span> <span class="n">automodule</span><span class="p">::</span> <span class="n">mon_api</span><span class="o">.</span><span class="n">api</span>
-   <span class="p">:</span><span class="n">members</span><span class="p">:</span>
-   <span class="p">:</span><span class="n">undoc</span><span class="o">-</span><span class="n">members</span><span class="p">:</span>
-   <span class="p">:</span><span class="n">show</span><span class="o">-</span><span class="n">inheritance</span><span class="p">:</span>
+<span class="p">..</span> <span class="ow">automodule</span><span class="p">::</span> mon_api.api
+   <span class="nc">:members:</span>
+   <span class="nc">:undoc-members:</span>
+   <span class="nc">:show-inheritance:</span>
 </pre></div>
 </div>
 <p>Dans cette exemple votre api : <code class="docutils literal notranslate"><span class="pre">apy.py</span></code> se trouve dans le dossier <code class="docutils literal notranslate"><span class="pre">mon_api</span></code></p>
@@ -409,31 +414,31 @@ Puis de l’appeler depuis <code class="docutils literal notranslate"><span clas
 └──<span class="w"> </span>pyproject.toml
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">Modules</span>
-<span class="o">===================</span>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Modules</span>
+<span class="gh">===================</span>
 
-Outils<span class="w"> </span>Mathématiques
---------------------
+<span class="gh">Outils Mathématiques</span>
+<span class="gh">--------------------</span>
 
-..<span class="w"> </span>automodule::<span class="w"> </span>api.modules.my_maths
-<span class="w">   </span>:members:
-<span class="w">   </span>:undoc-members:
-<span class="w">   </span>:show-inheritance:
+<span class="p">..</span> <span class="ow">automodule</span><span class="p">::</span> api.modules.my_maths
+   <span class="nc">:members:</span>
+   <span class="nc">:undoc-members:</span>
+   <span class="nc">:show-inheritance:</span>
 
-Logique<span class="w"> </span>métier
---------------
+<span class="gh">Logique métier</span>
+<span class="gh">--------------</span>
 
-..<span class="w"> </span>automodule::<span class="w"> </span>api.modules.modules
-<span class="w">   </span>:members:
-<span class="w">   </span>:undoc-members:
-<span class="w">   </span>:show-inheritance:
+<span class="p">..</span> <span class="ow">automodule</span><span class="p">::</span> api.modules.modules
+   <span class="nc">:members:</span>
+   <span class="nc">:undoc-members:</span>
+   <span class="nc">:show-inheritance:</span>
 
-..<span class="w"> </span>_references:
+<span class="p">..</span> <span class="nt">_references:</span>
 
-Bibliographie
--------------
+<span class="gh">Bibliographie</span>
+<span class="gh">-------------</span>
 
-..<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Schutz,<span class="w"> </span>A.<span class="w"> </span><span class="o">(</span><span class="m">2026</span><span class="o">)</span>.<span class="w"> </span>*Manuel<span class="w"> </span>de<span class="w"> </span>Packaging<span class="w"> </span>pour<span class="w"> </span>l<span class="err">&#39;</span>IA*.
+<span class="p">..</span> <span class="nt">[1]</span> Schutz, A. (2026). <span class="ge">*Manuel de Packaging pour l&#39;IA*</span>.
 </pre></div>
 </div>
 <p>La citation peut être appelé dans le documentation:</p>
@@ -574,11 +579,11 @@ Configuration dans <code class="docutils literal notranslate"><span class="pre">
 <section id="afficher-toutes-les-references">
 <h5>Afficher toutes les références<a class="headerlink" href="#afficher-toutes-les-references" title="Lien vers cette rubrique">¶</a></h5>
 <p>Vous pouvez très bien créer un <code class="docutils literal notranslate"><span class="pre">biblio.rst</span></code> et mettre cela dedans</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Bibliographie
--------------
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Bibliographie</span>
+<span class="gh">-------------</span>
 
-..<span class="w"> </span>bibliography::
-<span class="w">   </span>:filter:<span class="w"> </span>cited
+<span class="p">..</span> <span class="ow">bibliography</span><span class="p">::</span>
+   <span class="nc">:filter:</span> cited
 </pre></div>
 </div>
 </section>
@@ -598,8 +603,14 @@ Configuration dans <code class="docutils literal notranslate"><span class="pre">
 <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation de SQLalchemy Exo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_api.html">Référence technique de l’API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules_api.html#gestion-des-donnees">Gestion des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mon_api.html">Référence technique de l’API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mon_api.html#gestion-des-donnees">Gestion des données</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mon_api.html#modules">Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mon_api.html#module-mon_api.modules.my_maths">Outils Mathématiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mon_api.html#module-mon_api.modules.modules">Logique métier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mon_api.html#bibliographie">Bibliographie</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bibliographie.html">Sources et Références</a></li>
@@ -612,7 +623,7 @@ Configuration dans <code class="docutils literal notranslate"><span class="pre">
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="modules_api.html">
+          <a class="next-page" href="mon_api.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>

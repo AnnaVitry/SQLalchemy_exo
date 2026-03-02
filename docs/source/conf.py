@@ -37,7 +37,7 @@ language = "fr"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "furo"
-html_logo = "_static/img/favicon.png"
+html_logo = "_static/img/favicon.svg"
 html_title = "Documentation - Sphinx - UV - Exo SQLalchemy"
 html_static_path = ["_static"]
 html_theme_options = {

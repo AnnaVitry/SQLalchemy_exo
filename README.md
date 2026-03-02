@@ -111,7 +111,7 @@ Son rôle principal est de contenir la directive `.. toctree::` (Table of Conten
 ### Créer l’auto doc: 
 Si vous avez votre **api** dans un dossier mon_api, je vous conseille de créer un fichier `mon_api.rst` (pour rester consistant) dans le même dossier que `index.rst`.
 Puis de l’appeler depuis `mon_api.rst`: 
-```python
+```rst
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -122,7 +122,7 @@ Puis de l’appeler depuis `mon_api.rst`:
 Attention, retour à la ligne obligatoire entre caption et self  
 
 et mon_api.rst sera du genre: 
-```python
+```rst
 Documentation de l'api
 ======================
 
@@ -159,7 +159,7 @@ racine/
 │       └── index.rst
 └── pyproject.toml
 ```
-```bash
+```rst
 Modules
 ===================
 
@@ -324,7 +324,7 @@ Provenant de https://arxiv.org/abs/1706.03762 en cliquant sur `export BibTeX cit
 #### Afficher toutes les références
 Vous pouvez très bien créer un `biblio.rst` et mettre cela dedans
 
-```bash
+```rst
 Bibliographie
 -------------
 
