@@ -26,6 +26,8 @@ Outils Mathématiques
 Logique métier
 --------------
 
+Comme expliqué par :cite:p:`schutz2026manuel`, la structure est clef.
+
 .. automodule:: mon_api.modules.modules
    :members:
    :undoc-members:

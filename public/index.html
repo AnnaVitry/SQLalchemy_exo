@@ -545,8 +545,11 @@ Puis de l’appeler depuis <code class="docutils literal notranslate"><span clas
 <p>Le <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code> est un format de fichier standard (<strong>.bib</strong>) permettant de stocker des références bibliographiques de manière structurée et réutilisable. Il est massivement utilisé par <strong>les chercheurs, les universitaires et les ingénieurs</strong> (notamment en IA et Data Science) pour automatiser la citation de sources dans des documents LaTeX ou Sphinx.</p>
 <section id="installation-de-lextension-et-configuration-de-conf-py">
 <h5>Installation de l’extension et configuration de conf.py<a class="headerlink" href="#installation-de-lextension-et-configuration-de-conf-py" title="Lien vers cette rubrique">¶</a></h5>
-<p>On installe le package : uv add sphinxcontrib-bibtex
-Configuration dans <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> :</p>
+<p>On installe le package :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>sphinxcontrib-bibtex
+</pre></div>
+</div>
+<p>Configuration dans <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>
     <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>  <span class="c1"># Pour extraire la doc du code</span>
@@ -609,7 +612,7 @@ Configuration dans <code class="docutils literal notranslate"><span class="pre">
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mon_api.html#modules">Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="mon_api.html#module-mon_api.modules.my_maths">Outils Mathématiques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mon_api.html#module-mon_api.modules.modules">Logique métier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mon_api.html#logique-metier">Logique métier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mon_api.html#bibliographie">Bibliographie</a></li>
 </ul>
 </li>

@@ -289,7 +289,11 @@ On peut améliorer le visuel des commentaires en utilisant des lignes commençan
 Le `BibTeX` est un format de fichier standard (**.bib**) permettant de stocker des références bibliographiques de manière structurée et réutilisable. Il est massivement utilisé par **les chercheurs, les universitaires et les ingénieurs** (notamment en IA et Data Science) pour automatiser la citation de sources dans des documents LaTeX ou Sphinx.
 
 #### Installation de l’extension et configuration de conf.py
-On installe le package : uv add sphinxcontrib-bibtex
+On installe le package : 
+```bash
+uv add sphinxcontrib-bibtex
+```
+
 Configuration dans `conf.py` :
 ```python 
 extensions = [

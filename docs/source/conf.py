@@ -26,6 +26,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
     "myst_parser",
+    "sphinxcontrib.bibtex",
 ]
 
 templates_path = ["_templates"]
@@ -43,3 +44,9 @@ html_static_path = ["_static"]
 html_theme_options = {
     "sidebar_hide_name": True,
 }
+
+# -- Configuration de la bibliographie (sphinxcontrib-bibtex) ----------------
+# Spécifie les fichiers de base de données BibTeX contenant les références
+# citées dans les docstrings et les guides (ex: :cite:p:`key`).
+# Le fichier 'refs.bib' doit se trouver dans le dossier 'docs/source/'.
+bibtex_bibfiles = ["refs.bib"]
