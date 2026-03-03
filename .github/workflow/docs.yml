@@ -1,16 +1,13 @@
 name: Deploy Documentation
 
-
 on:
   push:
     branches: [main] # Se lance à chaque fois que tu push sur main
-
 
 permissions:
   contents: write
   pages: write
   id-token: write
-
 
 jobs:
   build-docs:
@@ -25,11 +22,16 @@ jobs:
           version: "latest"
 
       - name: Install dependencies
-        run: uv sync --all-extras # Installe Sphinx et le thème RTD définis dans le fichier toml
+        # Installe Sphinx, Furo et les extensions définies dans votre pyproject.toml
+        run: uv sync --all-extras
 
       - name: Build Sphinx Documentation
-        # On génère le HTML dans le dossier "public"
+        # On génère le HTML dans le dossier "public" [cite: 18, 186]
         run: uv run sphinx-build docs/source public
+
+      - name: Create .nojekyll
+        # Indispensable pour que GitHub Pages affiche le thème Furo et le menu latéral
+        run: touch public/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
